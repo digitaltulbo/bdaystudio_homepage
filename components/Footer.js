@@ -30,8 +30,7 @@ export default function Footer() {
 
                         <div className={styles.infoGroup}>
                             <h4>위치</h4>
-                            <p>경기도 성남시 분당구 장미로 101</p>
-                            <p>현대아파트 833동 앞 근린상가 2층</p>
+                            <p>성남시 분당구 야탑동 장미로 101 근린상가 2층 스튜디오생일</p>
                         </div>
                     </div>
 
