@@ -3,27 +3,15 @@ import styles from './PricingSection.module.css';
 const pricingPlans = [
     {
         name: 'Basic',
-        duration: '15분',
-        price: '15,000',
-        persons: '1~2인',
+        price: '40,000',
         features: ['보정본 10장', '원본 전체 제공', '소품 무료 대여'],
         popular: false
     },
     {
-        name: 'Standard',
-        duration: '30분',
-        price: '25,000',
-        persons: '1~4인',
-        features: ['보정본 20장', '원본 전체 제공', '소품 무료 대여', '추가 컨셉 선택'],
-        popular: true
-    },
-    {
         name: 'Premium',
-        duration: '60분',
-        price: '45,000',
-        persons: '1~6인',
-        features: ['보정본 40장', '원본 전체 제공', '소품 무료 대여', '2가지 컨셉', '의상 갈아입기 가능'],
-        popular: false
+        price: '70,000',
+        features: ['원본 전체 제공', '소품 무료 대여', '2가지 컨셉', '의상 갈아입기 가능', '흑백,컬러 모두 촬영 가능'],
+        popular: true
     }
 ];
 
@@ -49,10 +37,6 @@ export default function PricingSection() {
                         <div key={index} className={`${styles.plan} ${plan.popular ? styles.popular : ''}`}>
                             {plan.popular && <div className={styles.badge}>인기</div>}
                             <h3 className={styles.planName}>{plan.name}</h3>
-                            <div className={styles.duration}>
-                                <span className={styles.time}>{plan.duration}</span>
-                                <span className={styles.persons}>{plan.persons}</span>
-                            </div>
                             <div className={styles.priceWrapper}>
                                 <span className={styles.currency}>₩</span>
                                 <span className={styles.price}>{plan.price}</span>

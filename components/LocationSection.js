@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './LocationSection.module.css';
+import Image from 'next/image';
 
 export default function LocationSection() {
     return (
@@ -14,14 +15,19 @@ export default function LocationSection() {
                 <div className={styles.content}>
                     <div className={styles.mapWrapper}>
                         {/* Placeholder for Kakao/Naver Map */}
-                        <div className={styles.mapPlaceholder}>
-                            <span className={styles.mapIcon}>🗺️</span>
-                            <p>지도가 여기에 표시됩니다</p>
+                        <Image
+                            src="/images/map-preview.svg"
+                            alt="Studio Location Map"
+                            fill
+                            className={styles.mapImage}
+                            style={{ objectFit: 'cover' }}
+                        />
+                        <div className={styles.mapOverlay}>
                             <a
-                                href="https://map.kakao.com"
+                                href="https://place.map.kakao.com/499995588"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`btn btn-secondary ${styles.mapBtn}`}
+                                className={`btn ${styles.mapBtn}`}
                             >
                                 카카오맵에서 보기
                             </a>

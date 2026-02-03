@@ -4,9 +4,12 @@
 
 .plans {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-bottom: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .plan {
@@ -52,22 +55,7 @@
     margin-bottom: 12px;
 }
 
-.duration {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
 
-.time,
-.persons {
-    background: var(--color-beige);
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-warm-brown);
-}
 
 .priceWrapper {
     margin-bottom: 24px;

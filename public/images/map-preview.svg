@@ -1,0 +1,26 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#f9fafb"/>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Roads -->
+  <path d="M 0 200 L 800 200" stroke="#ffffff" stroke-width="15"/>
+  <path d="M 400 0 L 400 400" stroke="#ffffff" stroke-width="15"/>
+  <path d="M 0 200 L 800 200" stroke="#d1d5db" stroke-width="1"/> <!-- Road Border -->
+  <path d="M 400 0 L 400 400" stroke="#d1d5db" stroke-width="1"/> <!-- Road Border -->
+
+  <!-- Park -->
+  <rect x="50" y="50" width="150" height="100" fill="#dcfce7" rx="10"/>
+
+  <!-- Location Pin -->
+  <circle cx="400" cy="200" r="10" fill="#f43f5e" stroke="#fff" stroke-width="2"/>
+  <path d="M 400 200 L 400 190" stroke="#f43f5e" stroke-width="2"/>
+  
+  <!-- Pin Pulse (optional aesthetic) -->
+  <circle cx="400" cy="200" r="20" fill="#f43f5e" opacity="0.2"/>
+</svg>
