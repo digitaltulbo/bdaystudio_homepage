@@ -1,0 +1,139 @@
+.location {
+    background: var(--color-cream);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.mapWrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.mapPlaceholder {
+    background: linear-gradient(135deg, var(--color-beige), var(--color-soft-pink));
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.mapIcon {
+    font-size: 3rem;
+}
+
+.mapPlaceholder p {
+    font-size: 1rem;
+    color: var(--color-warm-brown);
+}
+
+.mapBtn {
+    margin-top: 8px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoCard {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.infoHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.infoIcon {
+    font-size: 1.5rem;
+}
+
+.infoHeader h3 {
+    font-size: 1.1rem;
+    color: var(--color-dark-brown);
+}
+
+.infoCard p {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.address {
+    font-weight: 600;
+    color: var(--color-dark-brown);
+}
+
+.addressDetail {
+    margin-top: 4px;
+}
+
+.copyBtn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--color-beige);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-warm-brown);
+    transition: all var(--transition-fast);
+}
+
+.copyBtn:hover {
+    background: var(--color-soft-pink);
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.highlightIcon {
+    font-size: 2.5rem;
+}
+
+.highlightText {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.highlightAccent {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.parkingNote,
+.transitNote {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .mapPlaceholder {
+        height: 300px;
+    }
+}

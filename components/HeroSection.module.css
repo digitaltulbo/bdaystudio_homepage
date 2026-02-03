@@ -1,0 +1,210 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 248, 240, 0.95) 0%,
+            rgba(250, 218, 221, 0.9) 50%,
+            rgba(232, 180, 184, 0.85) 100%);
+}
+
+.pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image:
+        radial-gradient(circle at 20% 80%, var(--color-accent) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, var(--color-accent) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, var(--color-warm-brown) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 120px 20px 80px;
+    max-width: 800px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-white);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-warm-brown);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--color-dark-brown);
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.ctaBtn {
+    min-width: 180px;
+}
+
+.features {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 12px 20px;
+    border-radius: var(--radius-lg);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-fast);
+}
+
+.featureItem:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.featureIcon {
+    font-size: 1.25rem;
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-warm-brown);
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.7;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scrollMouse {
+    width: 24px;
+    height: 36px;
+    border: 2px solid var(--color-warm-brown);
+    border-radius: 12px;
+    position: relative;
+}
+
+.scrollWheel {
+    width: 4px;
+    height: 8px;
+    background: var(--color-warm-brown);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollDown 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 100px 16px 60px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle br {
+        display: none;
+    }
+
+    .features {
+        gap: 12px;
+    }
+
+    .featureItem {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+
+    .scrollIndicator {
+        display: none;
+    }
+}

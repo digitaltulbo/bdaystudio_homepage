@@ -1,0 +1,129 @@
+.aiServices {
+    background: var(--color-ivory);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: all var(--transition-normal);
+    display: block;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-white);
+    padding: 4px 12px;
+    border-radius: var(--radius-xl);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.iconWrapper {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, var(--color-soft-pink), var(--color-blush));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-normal);
+}
+
+.card:hover .iconWrapper {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.icon {
+    font-size: 2.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--color-dark-brown);
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    transition: gap var(--transition-fast);
+}
+
+.card:hover .link {
+    gap: 10px;
+}
+
+.tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--color-beige), var(--color-cream));
+    padding: 20px 32px;
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tipIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tip p {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 32px 24px;
+    }
+
+    .tip {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tip p {
+        text-align: center;
+    }
+}

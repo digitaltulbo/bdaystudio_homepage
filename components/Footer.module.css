@@ -1,0 +1,129 @@
+.footer {
+    background: var(--color-dark-brown);
+    color: var(--color-cream);
+    padding: 60px 0 32px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+}
+
+.logoIcon {
+    font-size: 1.5rem;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.infoGroup h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.infoGroup p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+}
+
+.social h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 12px;
+}
+
+.socialLink {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cream);
+    transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.copyright,
+.business {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 992px) {
+    .main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .brand,
+    .social {
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
