@@ -29,6 +29,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://bdaystudio.store",
+  },
 };
 
 export default function RootLayout({ children }) {
