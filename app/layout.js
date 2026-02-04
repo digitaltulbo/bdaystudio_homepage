@@ -17,6 +17,14 @@ export const metadata = {
     description: "작가 없이 우리끼리, 우리답게. 반려견 동반 가능한 프라이빗 셀프 스튜디오. 라온제나 분당 도보 7분!",
     url: "https://bdaystudio.store",
     siteName: "스튜디오생일",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "스튜디오생일 - 분당 야탑 셀프사진관",
+      },
+    ],
     locale: "ko_KR",
     type: "website",
   },

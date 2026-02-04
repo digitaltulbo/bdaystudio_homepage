@@ -1,0 +1,116 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f3f4f6;
+}
+
+.giftLabel {
+    display: inline-block;
+    background-color: #fff1f2;
+    color: #be123c;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 1.25rem;
+}
+
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.875rem;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.downloadBtn:hover {
+    background-color: #374151;
+}
+
+.downloadBtnSecondary {
+    background-color: white;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+}
+
+.downloadBtnSecondary:hover {
+    background-color: #f9fafb;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+.expiryNotice {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #ef4444;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fef2f2;
+    border-radius: 8px;
+}
+
+.ctaSection {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.reviewLink {
+    display: inline-block;
+    color: #4b5563;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
