@@ -50,12 +50,12 @@ export default function PricingSection() {
                                 ))}
                             </ul>
                             <a
-                                href="https://pf.kakao.com/_example"
+                                href="https://naver.me/5ssB0M3B"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`btn ${plan.popular ? 'btn-primary' : 'btn-secondary'} ${styles.planBtn}`}
+                                className={`btn ${plan.popular ? styles.naverBtnPrimary : 'btn-secondary'} ${styles.planBtn}`}
                             >
-                                예약하기
+                                네이버 예약
                             </a>
                         </div>
                     ))}
@@ -64,7 +64,7 @@ export default function PricingSection() {
                 <div className={styles.hours}>
                     <div className={styles.hoursIcon}>🕐</div>
                     <h3>운영 시간</h3>
-                    <p>매일 10:00 - 22:00 (마지막 입장 21:00)</p>
+                    <p>매일 09:00 - 21:00 (마지막 입장 20:00)</p>
                     <p className={styles.hoursNote}>연중무휴 운영</p>
                 </div>
 

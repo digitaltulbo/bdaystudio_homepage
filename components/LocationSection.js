@@ -54,7 +54,7 @@ export default function LocationSection() {
                             <span className={styles.highlightIcon}>💒</span>
                             <div>
                                 <p className={styles.highlightText}>라온제나 분당에서</p>
-                                <p className={styles.highlightAccent}>도보 3분</p>
+                                <p className={styles.highlightAccent}>도보 7분</p>
                             </div>
                         </div>
 

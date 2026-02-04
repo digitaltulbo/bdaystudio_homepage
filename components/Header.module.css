@@ -88,6 +88,16 @@
     font-size: 0.9rem;
 }
 
+.naverBtn {
+    background: #03C75A;
+    color: white;
+    font-weight: 600;
+}
+
+.naverBtn:hover {
+    background: #02a84d;
+}
+
 .mobileMenuBtn {
     display: none;
     width: 32px;

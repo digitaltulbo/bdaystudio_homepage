@@ -48,60 +48,45 @@
     opacity: 0;
 }
 
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: transform var(--transition-normal);
-}
-
-.placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: var(--color-warm-brown);
-}
-
-.placeholderIcon {
-    font-size: 2.5rem;
-    opacity: 0.7;
-}
-
-.placeholderText {
-    font-size: 0.95rem;
-    font-weight: 500;
 }
 
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(93, 78, 55, 0.6);
+    background: linear-gradient(180deg, transparent 40%, rgba(93, 78, 55, 0.8) 100%);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    padding-bottom: 16px;
     opacity: 0;
     transition: opacity var(--transition-normal);
 }
 
-.viewIcon {
-    font-size: 2rem;
-    transform: scale(0.8);
-    transition: transform var(--transition-normal);
+.overlayTitle {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 12px;
 }
 
 .item:hover .image {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .item:hover .overlay {
     opacity: 1;
-}
-
-.item:hover .viewIcon {
-    transform: scale(1);
 }
 
 .more {
@@ -143,11 +128,17 @@
     transform: scale(1.1);
 }
 
-.lightboxImage {
+.lightboxImageWrapper {
     width: 100%;
-    aspect-ratio: 4/3;
     border-radius: var(--radius-md);
     overflow: hidden;
+}
+
+.lightboxImage {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
 }
 
 .lightboxTitle {

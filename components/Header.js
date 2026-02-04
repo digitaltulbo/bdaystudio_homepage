@@ -43,10 +43,10 @@ export default function Header() {
             </a>
           ))}
           <a 
-            href="https://pf.kakao.com/_example" 
+            href="https://naver.me/5ssB0M3B" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={`btn btn-kakao ${styles.reserveBtn}`}
+            className={`btn ${styles.naverBtn} ${styles.reserveBtn}`}
           >
             예약하기
           </a>

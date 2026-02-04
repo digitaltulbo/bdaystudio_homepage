@@ -97,6 +97,18 @@
     width: 100%;
 }
 
+.naverBtnPrimary {
+    background: #03C75A;
+    color: white;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+.naverBtnPrimary:hover {
+    background: #02a84d;
+    transform: translateY(-2px);
+}
+
 .hours {
     background: var(--color-white);
     border-radius: var(--radius-lg);

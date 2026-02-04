@@ -1,0 +1,129 @@
+.targetCustomers {
+    background: var(--color-ivory);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card.highlighted {
+    background: linear-gradient(135deg, var(--color-soft-pink) 0%, var(--color-blush) 100%);
+    border: 2px solid var(--color-accent);
+}
+
+.card.highlighted:hover {
+    box-shadow: 0 8px 32px rgba(232, 180, 184, 0.3);
+}
+
+.badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-white);
+    padding: 4px 12px;
+    border-radius: var(--radius-xl);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.iconWrapper {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    background: var(--color-cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-normal);
+}
+
+.card.highlighted .iconWrapper {
+    background: var(--color-white);
+}
+
+.card:hover .iconWrapper {
+    transform: scale(1.1);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    color: var(--color-dark-brown);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.card.highlighted .description {
+    color: var(--color-text);
+}
+
+.cta {
+    text-align: center;
+}
+
+.ctaText {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: var(--color-beige);
+    border-radius: var(--radius-lg);
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.ctaEmoji {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 24px 20px;
+    }
+
+    .ctaText {
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px;
+    }
+}

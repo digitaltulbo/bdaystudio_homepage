@@ -49,25 +49,42 @@
     margin-bottom: 40px;
 }
 
-.kakaoBtn {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.naverBtn {
+.naverBtnMain {
     background: #03C75A;
     color: var(--color-white);
-    padding: 20px 32px;
-    font-size: 1rem;
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px rgba(3, 199, 90, 0.4);
+}
+
+.naverBtnMain:hover {
+    background: #02b351;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(3, 199, 90, 0.5);
+}
+
+.naverBtnMain svg {
+    width: 24px;
+    height: 24px;
+}
+
+.kakaoBtn {
+    background: #FEE500;
+    color: #3C1E1E;
+    padding: 16px 28px;
+    font-size: 0.95rem;
     font-weight: 600;
     border-radius: var(--radius-xl);
 }
 
-.naverBtn:hover {
-    background: #02b351;
+.kakaoBtn:hover {
+    background: #F5DC00;
     transform: translateY(-2px);
 }
 
-.naverBtn svg {
+.kakaoBtn svg {
     width: 20px;
     height: 20px;
 }

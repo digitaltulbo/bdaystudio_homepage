@@ -42,6 +42,14 @@
     animation: fadeInUp 0.8s ease;
 }
 
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -53,7 +61,37 @@
     font-weight: 500;
     color: var(--color-warm-brown);
     box-shadow: var(--shadow-md);
-    margin-bottom: 32px;
+}
+
+.badgeHighlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #03C75A, #02a84d);
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.3);
+}
+
+.naverBtn {
+    background: #03C75A;
+    color: white;
+    padding: 20px 32px;
+    font-weight: 600;
+    border-radius: var(--radius-xl);
+}
+
+.naverBtn:hover {
+    background: #02a84d;
+    transform: translateY(-2px);
+}
+
+.naverBtn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .title {
@@ -187,6 +225,17 @@
         padding: 100px 16px 60px;
     }
 
+    .badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .badge, .badgeHighlight {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
     .title {
         font-size: 2.5rem;
     }
@@ -195,13 +244,24 @@
         display: none;
     }
 
+    .cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ctaBtn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
     .features {
-        gap: 12px;
+        gap: 8px;
     }
 
     .featureItem {
-        font-size: 0.85rem;
-        padding: 10px 16px;
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
 
     .scrollIndicator {

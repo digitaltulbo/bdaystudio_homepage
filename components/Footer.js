@@ -51,7 +51,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                             <a
-                                href="#"
+                                href="http://pf.kakao.com/_dykYG/chat"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.socialLink}

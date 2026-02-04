@@ -9,8 +9,13 @@ export default function HeroSection() {
             </div>
 
             <div className={styles.content}>
-                <div className={styles.badge}>
-                    <span>🎀</span> 프라이빗 셀프 스튜디오
+                <div className={styles.badges}>
+                    <div className={styles.badge}>
+                        <span>🎀</span> 프라이빗 셀프 스튜디오
+                    </div>
+                    <div className={styles.badgeHighlight}>
+                        <span>⭐</span> 네이버 리뷰 250+ · 평점 4.9
+                    </div>
                 </div>
 
                 <h1 className={styles.title}>
@@ -21,38 +26,50 @@ export default function HeroSection() {
 
                 <p className={styles.subtitle}>
                     눈치 보지 않고 자유롭게, 가장 자연스러운 우리의 모습을 담아보세요.<br />
-                    반려견과 함께해도 괜찮아요.
+                    <strong>AI 보정</strong>으로 촬영 당일 바로 전송해 드려요!
                 </p>
 
                 <div className={styles.cta}>
-                    <a
-                        href="https://pf.kakao.com/_example"
+                    <a 
+                        href="https://naver.me/5ssB0M3B" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`btn btn-kakao btn-large ${styles.ctaBtn}`}
+                        className={`btn ${styles.naverBtn} btn-large ${styles.ctaBtn}`}
                     >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z" />
+                        </svg>
+                        네이버로 예약하기
+                    </a>
+                    <a
+                        href="http://pf.kakao.com/_dykYG/chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`btn btn-kakao ${styles.ctaBtn}`}
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 3C6.5 3 2 6.58 2 11c0 2.85 1.89 5.34 4.72 6.76-.15.53-.55 1.92-.63 2.22-.1.36.13.36.28.26.12-.08 1.85-1.24 2.6-1.74.66.1 1.35.15 2.03.15 5.5 0 10-3.58 10-8s-4.5-8-10-8z" />
                         </svg>
-                        카카오로 예약하기
-                    </a>
-                    <a href="#gallery" className={`btn btn-secondary ${styles.ctaBtn}`}>
-                        포트폴리오 보기
+                        카카오 문의
                     </a>
                 </div>
 
                 <div className={styles.features}>
                     <div className={styles.featureItem}>
                         <span className={styles.featureIcon}>🐕</span>
-                        <span>반려견 동반 가능</span>
+                        <span>반려견 동반 OK</span>
                     </div>
                     <div className={styles.featureItem}>
                         <span className={styles.featureIcon}>💒</span>
-                        <span>결혼식장 도보 3분</span>
+                        <span>라온제나 도보 7분</span>
                     </div>
                     <div className={styles.featureItem}>
-                        <span className={styles.featureIcon}>👶</span>
-                        <span>전 연령대 환영</span>
+                        <span className={styles.featureIcon}>🤰</span>
+                        <span>만삭의상 무료대여</span>
+                    </div>
+                    <div className={styles.featureItem}>
+                        <span className={styles.featureIcon}>🚗</span>
+                        <span>무료주차</span>
                     </div>
                 </div>
             </div>
