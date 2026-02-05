@@ -25,7 +25,11 @@ export async function GET() {
 
         const rows = response.data.values;
         if (!rows || rows.length === 0) {
-            return NextResponse.json({ reservations: [] });
+            return NextResponse.json({ 
+                reservations: [],
+                debug_email: process.env.FIREBASE_CLIENT_EMAIL || "Email env not found",
+                debug_project: process.env.FIREBASE_PROJECT_ID 
+            });
         }
 
         // Map rows to objects based on user's format:
