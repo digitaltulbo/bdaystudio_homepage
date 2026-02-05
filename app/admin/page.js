@@ -8,12 +8,18 @@ export default function AdminPage() {
     const [password, setPassword] = useState('');
     const [customerName, setCustomerName] = useState('');
     const [shootDate, setShootDate] = useState(new Date().toISOString().split('T')[0]);
-    
+
     // 파일 상태
     const [videoFile, setVideoFile] = useState(null);
     const [calendarFile, setCalendarFile] = useState(null);
     const [originalFile, setOriginalFile] = useState(null);
     const [retouchedFile, setRetouchedFile] = useState(null);
+
+    // 구글 시트 데이터 상태
+    const [reservations, setReservations] = useState([]);
+    const [fetchingSheets, setFetchingSheets] = useState(false);
+    const [showSheetList, setShowSheetList] = useState(false);
+
 
     const [uploading, setUploading] = useState(false);
     const [resultLink, setResultLink] = useState('');
@@ -24,6 +30,32 @@ export default function AdminPage() {
         } else {
             alert('비밀번호가 틀렸습니다.');
         }
+    };
+
+    const fetchReservations = async () => {
+        setFetchingSheets(true);
+        try {
+            const res = await fetch('/api/fetch-reservations');
+            const data = await res.json();
+            if (data.error) throw new Error(data.error);
+            setReservations(data.reservations || []);
+            setShowSheetList(true);
+        } catch (error) {
+            console.error(error);
+            alert('시트 데이터를 가져오는데 실패했습니다.');
+        } finally {
+            setFetchingSheets(false);
+        }
+    };
+
+    const selectReservation = (res) => {
+        setCustomerName(res.customerName);
+        // "2026. 02. 04 14:00" -> "2026-02-04" 변환
+        const dateMatch = res.shootDate.match(/(\d{4})\.\s*(\d{2})\.\s*(\d{2})/);
+        if (dateMatch) {
+            setShootDate(`${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`);
+        }
+        setShowSheetList(false);
     };
 
     const handleUpload = async () => {
@@ -37,7 +69,7 @@ export default function AdminPage() {
                 const formData = new FormData();
                 formData.append('file', file);
                 formData.append('folder', folder);
-                
+
                 const res = await fetch('/api/upload', { method: 'POST', body: formData });
                 const data = await res.json();
                 return data.url;
@@ -89,10 +121,10 @@ export default function AdminPage() {
             <div className={styles.container}>
                 <div className={styles.loginBox}>
                     <h2>관리자 로그인</h2>
-                    <input 
-                        type="password" 
-                        className={styles.input} 
-                        value={password} 
+                    <input
+                        type="password"
+                        className={styles.input}
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="비밀번호"
                     />
@@ -105,24 +137,57 @@ export default function AdminPage() {
     return (
         <div className={styles.container}>
             <h2>🎁 고객 선물 페이지 생성</h2>
-            
+
+            <div className={styles.automationBox}>
+                <button
+                    className={styles.secondaryBtn}
+                    onClick={fetchReservations}
+                    disabled={fetchingSheets}
+                >
+                    {fetchingSheets ? '시트 불러오는 중...' : '📂 구글 시트에서 정보 가져오기'}
+                </button>
+
+                {showSheetList && (
+                    <div className={styles.sheetList}>
+                        <h3>예약 내역 선택</h3>
+                        <div className={styles.listContainer}>
+                            {reservations.map((res, idx) => (
+                                <div
+                                    key={idx}
+                                    className={styles.listItem}
+                                    onClick={() => selectReservation(res)}
+                                >
+                                    <div className={styles.listMain}>
+                                        <strong>{res.customerName}</strong> ({res.shootDate})
+                                    </div>
+                                    <div className={styles.listSub}>{res.productName}</div>
+                                </div>
+                            ))}
+                            {reservations.length === 0 && <p>가져온 데이터가 없습니다.</p>}
+                        </div>
+                        <button className={styles.closeBtn} onClick={() => setShowSheetList(false)}>닫기</button>
+                    </div>
+                )}
+            </div>
+
+
             <div className={styles.uploadSection}>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>고객 이름</label>
-                    <input 
-                        className={styles.input} 
-                        value={customerName} 
-                        onChange={(e) => setCustomerName(e.target.value)} 
+                    <input
+                        className={styles.input}
+                        value={customerName}
+                        onChange={(e) => setCustomerName(e.target.value)}
                         placeholder="예: 김민지"
                     />
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>촬영일</label>
-                    <input 
-                        type="date" 
-                        className={styles.input} 
-                        value={shootDate} 
-                        onChange={(e) => setShootDate(e.target.value)} 
+                    <input
+                        type="date"
+                        className={styles.input}
+                        value={shootDate}
+                        onChange={(e) => setShootDate(e.target.value)}
                     />
                 </div>
 
@@ -143,11 +208,11 @@ export default function AdminPage() {
                     <input type="file" onChange={(e) => setOriginalFile(e.target.files[0])} />
                 </div>
 
-                <button 
-                    className={styles.btn} 
-                    onClick={handleUpload} 
+                <button
+                    className={styles.btn}
+                    onClick={handleUpload}
                     disabled={uploading}
-                    style={{width: '100%', marginTop: '20px'}}
+                    style={{ width: '100%', marginTop: '20px' }}
                 >
                     {uploading ? '업로드 및 생성 중...' : '페이지 생성하기 ✨'}
                 </button>
@@ -160,9 +225,9 @@ export default function AdminPage() {
                     <div className={styles.linkBox}>
                         <a href={resultLink} target="_blank" rel="noreferrer">{resultLink}</a>
                     </div>
-                    <button 
-                        className={styles.btn} 
-                        style={{marginTop: '10px', backgroundColor: '#10b981'}}
+                    <button
+                        className={styles.btn}
+                        style={{ marginTop: '10px', backgroundColor: '#10b981' }}
                         onClick={() => navigator.clipboard.writeText(resultLink)}
                     >
                         링크 복사
