@@ -31,6 +31,37 @@ async function getCustomerData(id) {
     }
 }
 
+// Dynamic OG metadata for KakaoTalk preview
+export async function generateMetadata({ params }) {
+    const { id } = params;
+    const data = await getCustomerData(id);
+
+    if (!data) {
+        return {
+            title: '스튜디오생일',
+            description: '페이지를 찾을 수 없습니다.'
+        };
+    }
+
+    return {
+        title: `스튜디오생일 | ${data.customerName}님의 사진`,
+        description: '소중한 추억을 다운로드하세요 📸',
+        openGraph: {
+            title: `스튜디오생일 | ${data.customerName}님의 사진`,
+            description: '소중한 추억을 다운로드하세요 📸',
+            images: ['https://firebasestorage.googleapis.com/v0/b/bday-delivery.firebasestorage.app/o/og-image.jpg?alt=media'],
+            type: 'website',
+            siteName: '스튜디오생일',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `스튜디오생일 | ${data.customerName}님의 사진`,
+            description: '소중한 추억을 다운로드하세요 📸',
+            images: ['https://firebasestorage.googleapis.com/v0/b/bday-delivery.firebasestorage.app/o/og-image.jpg?alt=media'],
+        }
+    };
+}
+
 export default async function DownloadPage({ params }) {
     const { id } = params;
     const data = await getCustomerData(id);
@@ -47,6 +78,12 @@ export default async function DownloadPage({ params }) {
 
     return (
         <div className={styles.container}>
+            {/* 로고/브랜드 헤더 */}
+            <div className={styles.brandHeader}>
+                <span className={styles.brandIcon}>📸</span>
+                <span className={styles.brandName}>스튜디오생일</span>
+            </div>
+
             <header className={styles.header}>
                 <h1 className={styles.title}>{data.customerName}님, 사진이 도착했어요! 🎁</h1>
                 <p className={styles.subtitle}>
@@ -96,7 +133,7 @@ export default async function DownloadPage({ params }) {
                                 ? '예쁘게 보정된 사진입니다.'
                                 : '촬영하신 모든 원본 파일입니다.'}
                     </p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div className={styles.buttonGroup}>
                         {hasRetouched && (
                             <a href={data.retouchedUrl} className={styles.downloadBtn} target="_blank">
                                 <span className={styles.icon}>✨</span> 보정본 다운로드
@@ -112,7 +149,7 @@ export default async function DownloadPage({ params }) {
             )}
 
             <div className={styles.expiryNotice}>
-                ⚠️ 다운로드는 <strong>{data.expiryDate}</strong>까지만 가능합니다.<br />
+                ⚠️ 이 페이지는 <strong>{data.expiryDate}</strong>까지 유효합니다.<br />
                 기간 내에 꼭 저장해주세요! (이후 자동 삭제됨)
             </div>
 
@@ -121,6 +158,10 @@ export default async function DownloadPage({ params }) {
                     ✍️ 소중한 리뷰 남기러 가기
                 </a>
             </div>
+
+            <footer className={styles.footer}>
+                <p>© 스튜디오생일 | 분당 야탑 셀프사진관</p>
+            </footer>
         </div>
     );
 }
