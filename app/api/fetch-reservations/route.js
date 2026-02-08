@@ -1,12 +1,18 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
+import { requireAuth } from '@/lib/auth';
 
 export async function GET() {
+    // Authentication check
+    const authError = await requireAuth();
+    if (authError) {
+        return NextResponse.json({ error: authError.error }, { status: authError.status });
+    }
+
     const spreadsheetId = '1mEUjQ-toVNF1POvwZbVsGV0HEnEsHalyTICkLj04BSA';
-    const range = '시트1!A2:E100'; // Assuming first row is header, fetch up to 100 rows
+    const range = '시트1!A2:E100';
 
     try {
-        // Auth using existing individual environment variables
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 project_id: process.env.FIREBASE_PROJECT_ID,
@@ -32,15 +38,13 @@ export async function GET() {
             });
         }
 
-        // Map rows to objects based on user's format:
-        // A: 예약번호 (id), B: 예약자명 (name), C: 연락처 (phone), D: 촬영일시 (date), E: 상품명 (product)
         const reservations = rows.map((row) => ({
             id: row[0] || '',
             customerName: row[1] || '',
             phone: row[2] || '',
             shootDate: row[3] || '',
             productName: row[4] || '',
-        })).filter(res => res.customerName); // Filter out empty rows
+        })).filter(res => res.customerName);
 
         return NextResponse.json({ reservations });
 

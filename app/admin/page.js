@@ -24,11 +24,22 @@ export default function AdminPage() {
     const [uploading, setUploading] = useState(false);
     const [resultLink, setResultLink] = useState('');
 
-    const handleLogin = () => {
-        if (password === 'bday1234') {
-            setIsLoggedIn(true);
-        } else {
-            alert('비밀번호가 틀렸습니다.');
+    const handleLogin = async () => {
+        try {
+            const res = await fetch('/api/auth', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password }),
+            });
+
+            if (res.ok) {
+                setIsLoggedIn(true);
+            } else {
+                alert('비밀번호가 틀렸습니다.');
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            alert('로그인 중 오류가 발생했습니다.');
         }
     };
 
