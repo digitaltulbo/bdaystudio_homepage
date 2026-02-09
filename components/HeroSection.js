@@ -25,13 +25,13 @@ export default function HeroSection() {
                 </h1>
 
                 <p className={styles.subtitle}>
-                    눈치 보지 않고 자유롭게, 가장 자연스러운 우리의 모습을 담아보세요.<br />
-                    <strong>AI 보정</strong>으로 촬영 당일 바로 전송해 드려요!
+                    셔터를 누르는 순간이 선물이 되는 곳.<br />
+                    현장에서 바로 인화하거나, 전문가의 보정을 거쳐 택배로 받아보세요.
                 </p>
 
                 <div className={styles.cta}>
-                    <a 
-                        href="https://naver.me/5ssB0M3B" 
+                    <a
+                        href="https://naver.me/5ssB0M3B"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`btn ${styles.naverBtn} btn-large ${styles.ctaBtn}`}

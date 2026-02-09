@@ -25,7 +25,8 @@ export default function Home() {
         <HowToUseSection />
         <PricingSection />
         <LocationSection />
-        <AIServicesSection />
+        {/* AI Services Section - Coming Soon (런칭 전까지 숨김) */}
+        {/* <AIServicesSection /> */}
         <ReservationSection />
       </main>
       <FloatingCTA />

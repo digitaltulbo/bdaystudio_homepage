@@ -63,8 +63,9 @@ export default function LocationSection() {
                                 <span className={styles.infoIcon}>🚗</span>
                                 <h3>주차 안내</h3>
                             </div>
-                            <p>상가 내 주차장 이용 가능</p>
-                            <p className={styles.parkingNote}>무료 주차</p>
+                            <p>상가 앞 또는 단지 내 빈 곳에 주차 가능합니다.</p>
+                            <p>입구에 비치된 방문증을 차량 전면에 꼭 놓아주세요.</p>
+                            <p className={styles.parkingNote}>(네이버/티맵에서 &apos;스튜디오생일&apos; 검색을 권장합니다)</p>
                         </div>
 
                         <div className={styles.infoCard}>

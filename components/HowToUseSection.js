@@ -5,25 +5,25 @@ const steps = [
         number: '01',
         icon: '📱',
         title: '예약하기',
-        description: '카카오 채널에서 원하는 날짜와 시간을 선택해 예약해 주세요'
+        description: '네이버 예약에서 원하는 날짜와 시간을 선택해 주세요.'
     },
     {
         number: '02',
         icon: '🚶',
         title: '방문하기',
-        description: '예약 시간 10분 전까지 스튜디오에 도착해 주세요'
+        description: '예약 시간 5분 전, 문자로 안내받은 비밀번호를 입력하고 입장해 주세요.'
     },
     {
         number: '03',
         icon: '📸',
         title: '촬영하기',
-        description: '준비된 소품과 함께 자유롭게 촬영을 즐겨주세요'
+        description: '프라이빗한 공간에서 우리만의 속도로 자유롭게 셔터를 눌러보세요.'
     },
     {
         number: '04',
         icon: '💌',
         title: '사진 수령',
-        description: '촬영 당일 카카오톡으로 보정본과 원본을 전송해 드려요'
+        description: '베이직은 현장에서 바로 인화하고, 프리미엄은 보정 후 택배로 보내드려요.'
     }
 ];
 
