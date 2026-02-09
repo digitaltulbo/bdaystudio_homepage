@@ -7,6 +7,19 @@ function isValidUrl(url) {
     return url && url.trim() !== '' && url.trim() !== '#';
 }
 
+// Helper function to check if page is expired
+function isExpired(expiryDate) {
+    if (!expiryDate) return false;
+
+    // Parse date in format YYYY-MM-DD or YYYY. MM. DD
+    const cleanDate = expiryDate.replace(/\./g, '-').replace(/\s/g, '');
+    const expiry = new Date(cleanDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return expiry < today;
+}
+
 // 서버 사이드에서 데이터 가져오기
 async function getCustomerData(id) {
     if (id === 'sample') {
@@ -68,6 +81,37 @@ export default async function DownloadPage({ params }) {
 
     if (!data) {
         return notFound();
+    }
+
+    // Check if page is expired
+    const expired = isExpired(data.expiryDate);
+
+    // Show expired page message
+    if (expired) {
+        return (
+            <div className={styles.container}>
+                <div className={styles.brandHeader}>
+                    <span className={styles.brandIcon}>📸</span>
+                    <span className={styles.brandName}>스튜디오생일</span>
+                </div>
+
+                <div className={styles.expiredContainer}>
+                    <div className={styles.expiredIcon}>⏰</div>
+                    <h1 className={styles.expiredTitle}>만료된 페이지입니다</h1>
+                    <p className={styles.expiredDesc}>
+                        다운로드 기간이 종료되었습니다.<br />
+                        사진이 필요하시면 스튜디오로 문의해 주세요.
+                    </p>
+                    <a href="tel:0507-1433-5283" className={styles.contactBtn}>
+                        📞 스튜디오 연락하기
+                    </a>
+                </div>
+
+                <footer className={styles.footer}>
+                    <p>© 스튜디오생일 | 분당 야탑 셀프사진관</p>
+                </footer>
+            </div>
+        );
     }
 
     // Check which URLs are valid
