@@ -120,6 +120,10 @@ export default async function DownloadPage({ params }) {
     const hasOriginal = isValidUrl(data.originalUrl);
     const hasRetouched = isValidUrl(data.retouchedUrl);
 
+    // type 기반 텍스트 분기 (기본값: 'original')
+    const pageType = data.type || 'original';
+    const isRetouched = pageType === 'retouched';
+
     return (
         <div className={styles.container}>
             {/* 로고/브랜드 헤더 */}
@@ -129,10 +133,18 @@ export default async function DownloadPage({ params }) {
             </div>
 
             <header className={styles.header}>
-                <h1 className={styles.title}>{data.customerName}님, 사진이 도착했어요! 🎁</h1>
+                <h1 className={styles.title}>
+                    {isRetouched
+                        ? `${data.customerName}님, 보정본이 도착했어요! ✨`
+                        : `${data.customerName}님, 사진이 도착했어요! 🎁`
+                    }
+                </h1>
                 <p className={styles.subtitle}>
-                    오늘 촬영은 즐거우셨나요? 😊<br />
-                    감사한 마음을 담아 작은 선물들을 준비했어요.
+                    {isRetouched ? (
+                        <>정성껏 보정한 사진을 준비했어요 😊<br />확인 후 수정 요청이 있으시면 편하게 말씀해주세요.</>
+                    ) : (
+                        <>오늘 촬영은 즐거우셨나요? 😊<br />감사한 마음을 담아 작은 선물들을 준비했어요.</>
+                    )}
                 </p>
             </header>
 
@@ -166,21 +178,34 @@ export default async function DownloadPage({ params }) {
                 </div>
             )}
 
-            {/* 원본/보정본 다운로드 - conditional display */}
+            {/* 원본/보정본 다운로드 - type 기반 텍스트 분기 */}
             {(hasOriginal || hasRetouched) && (
                 <div className={styles.card}>
-                    <h3 className={styles.cardTitle}>📁 {hasRetouched && hasOriginal ? '원본 & 보정본 파일' : hasRetouched ? '보정본 파일' : '원본 파일'}</h3>
+                    <h3 className={styles.cardTitle}>
+                        {isRetouched
+                            ? '📁 보정본 파일'
+                            : hasRetouched && hasOriginal
+                                ? '📁 원본 & 보정본 파일'
+                                : hasRetouched
+                                    ? '📁 보정본 파일'
+                                    : '📁 원본 파일'
+                        }
+                    </h3>
                     <p className={styles.cardDesc}>
-                        {hasRetouched && hasOriginal
-                            ? '촬영하신 모든 원본 파일과 예쁘게 보정된 사진입니다.'
-                            : hasRetouched
-                                ? '예쁘게 보정된 사진입니다.'
-                                : '촬영하신 모든 원본 파일입니다.'}
+                        {isRetouched
+                            ? '보정이 완료된 사진 파일입니다.'
+                            : hasRetouched && hasOriginal
+                                ? '촬영하신 모든 원본 파일과 예쁘게 보정된 사진입니다.'
+                                : hasRetouched
+                                    ? '예쁘게 보정된 사진입니다.'
+                                    : '촬영하신 모든 원본 파일입니다.'
+                        }
                     </p>
                     <div className={styles.buttonGroup}>
                         {hasRetouched && (
                             <a href={data.retouchedUrl} className={styles.downloadBtn} target="_blank">
-                                <span className={styles.icon}>✨</span> 보정본 다운로드
+                                <span className={styles.icon}>✨</span>
+                                {isRetouched ? ' 보정본 다운로드 (Zip)' : ' 보정본 다운로드'}
                             </a>
                         )}
                         {hasOriginal && (

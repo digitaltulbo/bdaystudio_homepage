@@ -27,7 +27,7 @@ export async function POST(request) {
 
     try {
         const body = await request.json();
-        const { customerName, shootDate, originalUrl, retouchedUrl, videoUrl, calendarUrl } = body;
+        const { customerName, shootDate, originalUrl, retouchedUrl, videoUrl, calendarUrl, type } = body;
 
         // Validation
         if (!customerName || !shootDate) {
@@ -35,6 +35,9 @@ export async function POST(request) {
                 error: 'Missing required fields: customerName and shootDate are required'
             }, { status: 400 });
         }
+
+        // Validate type parameter
+        const pageType = type === 'retouched' ? 'retouched' : 'original';
 
         // Generate ID: YYYYMMDD-random5chars (same logic as admin page)
         const id = `${shootDate.replace(/-/g, '')}-${Math.random().toString(36).substr(2, 5)}`;
@@ -48,6 +51,7 @@ export async function POST(request) {
             customerName,
             shootDate,
             expiryDate,
+            type: pageType,
             videoUrl: videoUrl || '',
             calendarUrl: calendarUrl || '',
             originalUrl: originalUrl || '',
