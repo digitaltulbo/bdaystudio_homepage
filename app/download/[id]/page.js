@@ -223,9 +223,15 @@ export default async function DownloadPage({ params }) {
             </div>
 
             <div className={styles.ctaSection}>
-                <a href="https://m.place.naver.com/my" target="_blank" rel="noreferrer" className={styles.reviewLink}>
-                    ✍️ 소중한 리뷰 남기러 가기
-                </a>
+                {pageType === 'original' && isValidUrl(data.formUrl) ? (
+                    <a href={data.formUrl} target="_blank" rel="noreferrer" className={`${styles.reviewLink} ${styles.formLink}`}>
+                        📝 보정 요청서 작성하기
+                    </a>
+                ) : (
+                    <a href="https://m.place.naver.com/my" target="_blank" rel="noreferrer" className={styles.reviewLink}>
+                        ✍️ 소중한 리뷰 남기러 가기
+                    </a>
+                )}
             </div>
 
             <footer className={styles.footer}>

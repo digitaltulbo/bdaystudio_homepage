@@ -171,6 +171,18 @@
     border-color: #d1d5db;
 }
 
+.formLink {
+    background-color: #fecaca;
+    color: #991b1b;
+    border-color: #fca5a5;
+    font-weight: 600;
+}
+
+.formLink:hover {
+    background-color: #fee2e2;
+    border-color: #f87171;
+}
+
 .footer {
     margin-top: 2rem;
     padding-top: 1.5rem;

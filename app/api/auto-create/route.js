@@ -27,7 +27,7 @@ export async function POST(request) {
 
     try {
         const body = await request.json();
-        const { customerName, shootDate, originalUrl, retouchedUrl, videoUrl, calendarUrl, type } = body;
+        const { customerName, shootDate, originalUrl, retouchedUrl, videoUrl, calendarUrl, formUrl, type } = body;
 
         // Validation
         if (!customerName || !shootDate) {
@@ -54,6 +54,7 @@ export async function POST(request) {
             type: pageType,
             videoUrl: videoUrl || '',
             calendarUrl: calendarUrl || '',
+            formUrl: formUrl || '',
             originalUrl: originalUrl || '',
             retouchedUrl: retouchedUrl || '',
             createdAt: new Date().toISOString(),
