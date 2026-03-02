@@ -102,8 +102,11 @@ export default async function DownloadPage({ params }) {
                         다운로드 기간이 종료되었습니다.<br />
                         사진이 필요하시면 스튜디오로 문의해 주세요.
                     </p>
-                    <a href="tel:0507-1433-5283" className={styles.contactBtn}>
-                        📞 스튜디오 연락하기
+                    <a href="http://pf.kakao.com/_dykYG/chat" target="_blank" rel="noreferrer" className={styles.kakaoBtn}>
+                        <span className={styles.kakaoBtnIcon}>💛</span> 카카오톡으로 문의하기
+                    </a>
+                    <a href="tel:0507-1433-5283" className={styles.contactBtnSecondary}>
+                        📞 전화로 문의하기
                     </a>
                 </div>
 
@@ -222,16 +225,34 @@ export default async function DownloadPage({ params }) {
                 기간 내에 꼭 저장해주세요! (이후 자동 삭제됨)
             </div>
 
+            {/* 카카오톡 채팅 유도 */}
+            <div className={styles.kakaoCard}>
+                <div className={styles.kakaoHeader}>
+                    <span className={styles.kakaoIcon}>💬</span>
+                    <h3 className={styles.kakaoTitle}>
+                        {isRetouched ? '수정 요청이 있으신가요?' : '보정 요청 · 문의는 카카오톡으로'}
+                    </h3>
+                </div>
+                <p className={styles.kakaoDesc}>
+                    {isRetouched
+                        ? '보정본 확인 후 수정이 필요하시면 카카오톡으로 편하게 말씀해주세요!'
+                        : '보정 요청, 추가 문의, 재촬영 예약까지 카카오톡으로 편하게 대화하세요.'
+                    }
+                </p>
+                <a href="http://pf.kakao.com/_dykYG/chat" target="_blank" rel="noreferrer" className={styles.kakaoBtn}>
+                    <span className={styles.kakaoBtnIcon}>💛</span> 카카오톡으로 대화하기
+                </a>
+            </div>
+
             <div className={styles.ctaSection}>
-                {pageType === 'original' && isValidUrl(data.formUrl) ? (
+                {pageType === 'original' && isValidUrl(data.formUrl) && (
                     <a href={data.formUrl} target="_blank" rel="noreferrer" className={`${styles.reviewLink} ${styles.formLink}`}>
                         📝 보정 요청서 작성하기
                     </a>
-                ) : (
-                    <a href="https://m.place.naver.com/my" target="_blank" rel="noreferrer" className={styles.reviewLink}>
-                        ✍️ 소중한 리뷰 남기러 가기
-                    </a>
                 )}
+                <a href="https://m.place.naver.com/my" target="_blank" rel="noreferrer" className={styles.reviewLink}>
+                    ✍️ 소중한 리뷰 남기러 가기
+                </a>
             </div>
 
             <footer className={styles.footer}>
