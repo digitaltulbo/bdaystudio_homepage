@@ -2,30 +2,30 @@ import styles from './TargetCustomersSection.module.css';
 
 const targetGroups = [
     {
-        icon: '💒',
-        title: '하객룩 촬영하시는 분',
-        description: '라온제나 분당에서 도보 7분! 결혼식 전후로 간편하게 방문해서 예쁜 하객룩 사진 남겨가세요.',
+        icon: '👨‍👩‍👧‍👦',
+        title: '자연스러운 가족사진 원하시는 분',
+        description: '작가의 시선 없이 우리 가족끼리 편하게 웃고 움직이며 자연스러운 사진을 남겨보세요.',
         badge: '인기',
         highlight: true
     },
     {
-        icon: '👨‍👩‍👧‍👦',
-        title: '자연스러운 가족사진 원하시는 분',
-        description: '아이들이 놀 수 있는 공간과 장난감이 있어요. 낮가림 심한 아이도 편안하게 촬영할 수 있어요.',
+        icon: '🤰',
+        title: '만삭사진을 편하게 남기고 싶은 분',
+        description: '부담 없는 프라이빗 공간에서 출산 전의 소중한 모습을 우리 가족답게 기록하세요.',
         badge: null,
         highlight: false
     },
     {
-        icon: '🤰',
-        title: '만삭 기념사진 촬영하시는 분',
-        description: '만삭 촬영용 의상 무료 대여! 프라이빗하게 편안한 분위기에서 소중한 순간을 담아보세요.',
+        icon: '👶',
+        title: '아기 성장기록을 남기고 싶은 분',
+        description: '백일, 돌, 생일처럼 금방 지나가는 순간을 아이 컨디션에 맞춰 천천히 담아보세요.',
         badge: null,
         highlight: false
     },
     {
         icon: '🐕',
-        title: '반려견과 함께 추억 남기실 분',
-        description: '다른 스튜디오에서 거절당하셨나요? 저희는 반려동물 촬영 추가요금 없이 환영해요!',
+        title: '반려동물과 함께 추억 남기실 분',
+        description: '반려동물도 가족으로 함께 남길 수 있습니다. 영유아 또는 반려동물 1명은 무료 추가됩니다.',
         badge: 'WELCOME',
         highlight: false
     },
@@ -50,7 +50,7 @@ export default function TargetCustomersSection() {
         <section className={`section ${styles.targetCustomers}`}>
             <div className="container">
                 <div className="section-title">
-                    <h2>이런 분들께 추천드려요</h2>
+                    <h2>추천 촬영</h2>
                     <p>당신에게 딱 맞는 촬영 공간, 스튜디오생일</p>
                 </div>
 
@@ -75,7 +75,7 @@ export default function TargetCustomersSection() {
                 <div className={styles.cta}>
                     <p className={styles.ctaText}>
                         <span className={styles.ctaEmoji}>💡</span>
-                        어떤 촬영이든 편하게 문의주세요. 친절하게 안내해 드릴게요!
+                        촬영 전 궁금한 점은 네이버톡톡으로 편하게 문의해 주세요.
                     </p>
                 </div>
             </div>

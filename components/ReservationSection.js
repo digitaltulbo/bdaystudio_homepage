@@ -29,11 +29,11 @@ export default function ReservationSection() {
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z" />
                         </svg>
-                        네이버로 예약하기
+                        네이버 예약하기
                     </a>
 
                     <a
-                        href="http://pf.kakao.com/_dykYG/chat"
+                        href="https://talk.naver.com/profile/weckh5v"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`btn ${styles.kakaoBtn}`}
@@ -41,7 +41,7 @@ export default function ReservationSection() {
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 3C6.5 3 2 6.58 2 11c0 2.85 1.89 5.34 4.72 6.76-.15.53-.55 1.92-.63 2.22-.1.36.13.36.28.26.12-.08 1.85-1.24 2.6-1.74.66.1 1.35.15 2.03.15 5.5 0 10-3.58 10-8s-4.5-8-10-8z" />
                         </svg>
-                        카카오 문의
+                        네이버톡톡 문의
                     </a>
                 </div>
 

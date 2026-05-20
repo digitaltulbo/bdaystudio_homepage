@@ -14,7 +14,6 @@ export default function LocationSection() {
 
                 <div className={styles.content}>
                     <div className={styles.mapWrapper}>
-                        {/* Placeholder for Kakao/Naver Map */}
                         <Image
                             src="/images/map-preview.svg"
                             alt="Studio Location Map"
@@ -24,12 +23,12 @@ export default function LocationSection() {
                         />
                         <div className={styles.mapOverlay}>
                             <a
-                                href="https://place.map.kakao.com/499995588"
+                                href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%9E%A5%EB%AF%B8%EB%A1%9C%20101"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`btn ${styles.mapBtn}`}
                             >
-                                카카오맵에서 보기
+                                네이버 지도에서 보기
                             </a>
                         </div>
                     </div>
@@ -40,7 +39,7 @@ export default function LocationSection() {
                                 <span className={styles.infoIcon}>📍</span>
                                 <h3>주소</h3>
                             </div>
-                            <p className={styles.address}>경기도 성남시 분당구 장미로 101</p>
+                            <p className={styles.address}>경기 성남시 분당구 장미로 101</p>
                             <p className={styles.addressDetail}>현대아파트 833동 앞 근린상가 2층</p>
                             <button
                                 className={styles.copyBtn}
@@ -51,10 +50,10 @@ export default function LocationSection() {
                         </div>
 
                         <div className={styles.highlight}>
-                            <span className={styles.highlightIcon}>💒</span>
+                            <span className={styles.highlightIcon}>🚇</span>
                             <div>
-                                <p className={styles.highlightText}>라온제나 분당에서</p>
-                                <p className={styles.highlightAccent}>도보 7분</p>
+                                <p className={styles.highlightText}>야탑역 4번 출구</p>
+                                <p className={styles.highlightAccent}>도보 약 7분</p>
                             </div>
                         </div>
 
@@ -73,8 +72,8 @@ export default function LocationSection() {
                                 <span className={styles.infoIcon}>🚇</span>
                                 <h3>대중교통</h3>
                             </div>
-                            <p>야탑역 1번 출구에서 도보 10분</p>
-                            <p className={styles.transitNote}>장미마을 정류장 도보 2분</p>
+                            <p>야탑역 4번 출구에서 도보 약 7분</p>
+                            <p className={styles.transitNote}>장미마을 정류장 하차 시 도보 약 2분</p>
                         </div>
                     </div>
                 </div>

@@ -44,7 +44,7 @@ async function getCustomerData(id) {
     }
 }
 
-// Dynamic OG metadata for KakaoTalk preview
+// Dynamic OG metadata for message preview
 export async function generateMetadata({ params }) {
     const { id } = params;
     const data = await getCustomerData(id);

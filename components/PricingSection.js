@@ -2,37 +2,33 @@ import styles from './PricingSection.module.css';
 
 const pricingPlans = [
     {
-        name: 'Basic',
+        name: '프라이빗 셀프촬영',
         price: '40,000',
         features: [
-            '총 60분 이용 (촬영 30분 + 셀렉/인화 30분)',
-            '인원수대로 사진 인화 제공 (현장 수령)',
-            '촬영 원본 전체 제공 (리뷰 이벤트 참여 시)',
-            '타임랩스 영상 촬영 가능',
-            '다양한 촬영 소품 무료 대여'
-        ],
-        popular: false
-    },
-    {
-        name: 'Premium',
-        price: '70,000',
-        features: [
-            '총 60분 이용 (촬영 55분 + 정리 5분)',
-            '전문가 색감 보정본 제공',
-            '보정본 인화 및 액자 택배 발송 (무료 배송)',
-            '촬영 원본 전체 제공 (기본 포함)',
-            '의상 교체 및 소품 활용 자유'
+            '성인 2인 기준',
+            '총 55분 이용',
+            '촬영 약 30분, 사진 선택과 인화 약 25분',
+            '5x7 인화 3장 포함',
+            '원본 전체 무료 제공',
+            '아이보리 배경 중심 운영'
         ],
         popular: true
     }
 ];
 
+const addOns = [
+    '추가 인원 1인 10,000원',
+    '9컷 모바일 이미지 20,000원 (인화 없이 파일 제공)',
+    '헬륨 풍선 패키지 20,000원 (마카롱 헬륨 풍선만 운영, 최소 4일 전 예약 필수)',
+    '5x7 나무 액자 추가 10,000원',
+    '사진 추가 인화 1장 2,000원'
+];
+
 const notices = [
-    '반려견 동반 시 추가 요금 없이 이용 가능해요',
-    '영유아(24개월 이하)는 인원에서 제외돼요',
-    '예약 시간 5분 전부터 입장 가능해요',
-    '노쇼(No-Show) 시 다음 예약이 제한될 수 있어요',
-    '촬영 원본은 상품 타입에 따라 수령 방식이 달라요'
+    '영유아 또는 반려동물 1명은 무료로 추가됩니다',
+    '촬영, 사진 선택, 인화는 고객님이 직접 진행합니다',
+    '여권사진, 증명사진, 신분증 사진 촬영은 불가합니다',
+    '카메라와 조명 장비는 임의로 조작하지 말아 주세요'
 ];
 
 export default function PricingSection() {
@@ -41,13 +37,13 @@ export default function PricingSection() {
             <div className="container">
                 <div className="section-title">
                     <h2>이용 안내</h2>
-                    <p>합리적인 가격으로 특별한 추억을 만들어 보세요</p>
+                    <p>단일 상품과 필요한 옵션만 투명하게 안내합니다</p>
                 </div>
 
                 <div className={styles.plans}>
                     {pricingPlans.map((plan, index) => (
                         <div key={index} className={`${styles.plan} ${plan.popular ? styles.popular : ''}`}>
-                            {plan.popular && <div className={styles.badge}>인기</div>}
+                            {plan.popular && <div className={styles.badge}>단일 상품</div>}
                             <h3 className={styles.planName}>{plan.name}</h3>
                             <div className={styles.priceWrapper}>
                                 <span className={styles.currency}>₩</span>
@@ -65,12 +61,23 @@ export default function PricingSection() {
                                 href="https://naver.me/5ssB0M3B"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`btn ${plan.popular ? styles.naverBtnPrimary : 'btn-secondary'} ${styles.planBtn}`}
+                                className={`btn ${styles.naverBtnPrimary} ${styles.planBtn}`}
                             >
-                                네이버 예약
+                                네이버 예약하기
                             </a>
                         </div>
                     ))}
+                </div>
+
+                <div className={styles.notices}>
+                    <h3 className={styles.noticesTitle}>
+                        <span>➕</span> 추가 옵션
+                    </h3>
+                    <ul className={styles.noticesList}>
+                        {addOns.map((notice, index) => (
+                            <li key={index}>{notice}</li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className={styles.hours}>
@@ -82,7 +89,7 @@ export default function PricingSection() {
 
                 <div className={styles.notices}>
                     <h3 className={styles.noticesTitle}>
-                        <span>📌</span> 알아두세요
+                        <span>📌</span> 꼭 확인해 주세요
                     </h3>
                     <ul className={styles.noticesList}>
                         {notices.map((notice, index) => (

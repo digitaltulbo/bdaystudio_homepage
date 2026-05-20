@@ -84,7 +84,7 @@ export default async function Image() {
                         display: 'flex',
                     }}
                 >
-                    Studio B-day
+                    Studio BDAY
                 </div>
 
                 {/* Korean name */}
@@ -121,7 +121,7 @@ export default async function Image() {
                         display: 'flex',
                     }}
                 >
-                    분당 야탑 셀프사진관 · 라온제나 도보 7분
+                    분당 야탑 가족 중심 프라이빗 셀프사진관
                 </div>
 
                 {/* Bottom accent bar */}

@@ -20,7 +20,6 @@ export default function Header() {
     { label: '갤러리', href: '#gallery' },
     { label: '이용안내', href: '#pricing' },
     { label: '오시는 길', href: '#location' },
-    { label: 'AI 서비스', href: '#ai-services' },
   ];
 
   return (
@@ -28,7 +27,7 @@ export default function Header() {
       <div className={styles.container}>
         <a href="#" className={styles.logo}>
           <span className={styles.logoIcon}>📸</span>
-          <span className={styles.logoText}>Studio B-day</span>
+          <span className={styles.logoText}>Studio BDAY</span>
         </a>
 
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
@@ -48,7 +47,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className={`btn ${styles.naverBtn} ${styles.reserveBtn}`}
           >
-            예약하기
+            네이버 예약
           </a>
         </nav>
 

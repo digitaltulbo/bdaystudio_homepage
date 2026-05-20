@@ -1,242 +1,134 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './guide.module.css';
 
-export default function GuidePage() {
-    const [activeTab, setActiveTab] = useState('basic'); // 'basic' or 'premium'
+const steps = [
+    {
+        title: '입장 및 준비',
+        time: '예약 시간',
+        desc: '예약 시간에 맞춰 입장 후 안내문을 확인하고 리모컨과 촬영 위치를 확인해 주세요.'
+    },
+    {
+        title: '셀프촬영',
+        time: '약 30분',
+        desc: '아이보리 배경 앞에서 리모컨으로 직접 촬영합니다. 카메라와 조명은 임의로 조작하지 말아 주세요.'
+    },
+    {
+        title: '사진 선택',
+        time: '선택',
+        desc: '마음에 드는 사진을 고릅니다. 기본 5x7 인화 3장이 포함되어 있습니다.'
+    },
+    {
+        title: '인화',
+        time: '약 25분 안에 진행',
+        desc: '사진 선택과 인화를 고객님이 직접 진행합니다. 추가 인화는 1장 2,000원입니다.'
+    },
+    {
+        title: '원본 파일 수령',
+        time: '무료',
+        desc: '촬영 원본 전체를 무료로 받아갑니다.'
+    }
+];
 
+const options = [
+    '추가 인원 1인 10,000원',
+    '9컷 모바일 이미지 20,000원 (인화 없이 파일 제공)',
+    '헬륨 풍선 패키지 20,000원 (마카롱 헬륨 풍선만 운영, 최소 4일 전 예약 필수)',
+    '5x7 나무 액자 추가 10,000원',
+    '사진 추가 인화 1장 2,000원'
+];
+
+export default function GuidePage() {
     return (
         <div className={styles.container}>
-            {/* 로고/브랜드 헤더 */}
             <div className={styles.brandHeader}>
                 <span className={styles.brandIcon}>📸</span>
                 <span className={styles.brandName}>스튜디오생일</span>
             </div>
 
-            <h1 className={styles.pageTitle}>이용 안내</h1>
+            <h1 className={styles.pageTitle}>촬영 매뉴얼</h1>
 
-            {/* 탭 네비게이션 */}
-            <div className={styles.tabNav}>
-                <button
-                    className={`${styles.tabBtn} ${activeTab === 'basic' ? styles.tabActive : ''}`}
-                    onClick={() => setActiveTab('basic')}
-                >
-                    베이직
-                </button>
-                <button
-                    className={`${styles.tabBtn} ${activeTab === 'premium' ? styles.tabActive : ''}`}
-                    onClick={() => setActiveTab('premium')}
-                >
-                    프리미엄
-                </button>
+            <div className={styles.infoBox}>
+                프라이빗 셀프촬영 40,000원<br />
+                총 55분 이용 · 촬영 약 30분 · 사진 선택과 인화 약 25분
             </div>
 
-            {/* 베이직 이용순서 */}
-            {activeTab === 'basic' && (
-                <div className={styles.stepsContainer}>
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>1</div>
+            <div className={styles.stepsContainer}>
+                {steps.map((step, index) => (
+                    <div className={styles.stepCard} key={step.title}>
+                        <div className={styles.stepNumber}>{index + 1}</div>
                         <div className={styles.stepContent}>
                             <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>입장</h3>
+                                <h3 className={styles.stepTitle}>{step.title}</h3>
+                                <span className={styles.stepTime}>{step.time}</span>
                             </div>
-                            <p className={styles.stepDesc}>
-                                비밀번호를 입력하여 입장해 주세요.<br />
-                                예약 시간 5분 전부터 입장 가능합니다.
-                            </p>
+                            <p className={styles.stepDesc}>{step.desc}</p>
                         </div>
                     </div>
+                ))}
+            </div>
 
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>2</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>촬영</h3>
-                                <span className={styles.stepTime}>30분</span>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                안내문에 적힌 대로 촬영 세팅<br />
-                                (PC와 태블릿PC 이용)
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>3</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>셀렉 및 인화</h3>
-                                <span className={styles.stepTime}>30분</span>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                촬영이 끝나면 인화할 사진을 고르고 출력합니다.<br />
-                                이용 인원수만큼 인화 가능 (예: 2인 예약 시 3장)
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>4</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>내보내기</h3>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                화면의 "내보내기" 버튼을 눌러주세요.<br />
-                                원본 사진은 네이버 리뷰 작성 후 카카오톡으로 전달됩니다.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* 프리미엄 이용순서 */}
-            {activeTab === 'premium' && (
-                <div className={styles.stepsContainer}>
-                    <div className={styles.infoBox}>
-                        베이직과 동일한 셀프촬영입니다.<br />
-                        현장에서 내보내기/인화 없이 촬영에만 집중!
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>1</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>입장</h3>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                비밀번호를 입력하여 입장해 주세요.<br />
-                                예약 시간 5분 전부터 입장 가능합니다.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>2</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>촬영</h3>
-                                <span className={styles.stepTime}>55분</span>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                안내문에 적힌 대로 촬영을 진행합니다.<br />
-                                (촬영 55분 + 정리 5분)
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>3</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>원본 전달</h3>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                귀가 후 다운로드 링크를<br />
-                                카카오 알림톡으로 전달해 드립니다.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={styles.stepCard}>
-                        <div className={styles.stepNumber}>4</div>
-                        <div className={styles.stepContent}>
-                            <div className={styles.stepHeader}>
-                                <h3 className={styles.stepTitle}>보정 및 배송</h3>
-                            </div>
-                            <p className={styles.stepDesc}>
-                                보정 신청서 작성 → 보정 사진 + 액자 패키징 → 택배 발송
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* 촬영 꿀팁 섹션 */}
             <div className={styles.tipsSection}>
-                <h2 className={styles.sectionTitle}>📸 촬영 꿀팁</h2>
+                <h2 className={styles.sectionTitle}>포함 사항</h2>
                 <ul className={styles.tipsList}>
-                    <li>카메라 시선을 맞춰주세요</li>
-                    <li>배경지는 바닥 전체에 깔아야 예뻐요</li>
-                    <li>가운데 표시선에 맞춰 서주세요</li>
-                    <li>머리 위 공간은 넉넉하게!</li>
+                    <li>성인 2인 기준</li>
+                    <li>영유아 또는 반려동물 1명 무료 추가</li>
+                    <li>5x7 인화 3장 포함</li>
+                    <li>원본 전체 무료 제공</li>
+                    <li>아이보리 배경 중심 운영</li>
                 </ul>
-                <a
-                    href="https://studio.bdayyatap.work/photo/mo/sharing/YnVLkdg5n"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.tipsLink}
-                >
-                    👉 포즈 가이드 보러가기
-                </a>
             </div>
 
-            {/* 주의사항 섹션 */}
+            <div className={styles.tipsSection}>
+                <h2 className={styles.sectionTitle}>추가 옵션</h2>
+                <ul className={styles.tipsList}>
+                    {options.map((option) => (
+                        <li key={option}>{option}</li>
+                    ))}
+                </ul>
+            </div>
+
             <div className={styles.warningSection}>
-                <h2 className={styles.sectionTitle}>⚠️ 주의사항</h2>
+                <h2 className={styles.sectionTitle}>주의사항</h2>
                 <ul className={styles.warningList}>
                     <li>
-                        <strong>⏰ 시간 엄수</strong><br />
-                        종료 시간 이후 다음 팀을 위해 시스템이 자동 종료됩니다.<br />
-                        지각 시 이용 시간이 단축됩니다.
+                        <strong>직접 이용</strong><br />
+                        촬영, 사진 선택, 인화는 고객님이 직접 진행합니다.
                     </li>
                     <li>
-                        <strong>🪟 유리벽 주의</strong><br />
-                        복도 쪽 커튼 뒤는 유리입니다. 기대지 마세요.<br />
-                        (안전사고 책임은 보호자에게 있습니다)
+                        <strong>촬영 불가 항목</strong><br />
+                        여권사진, 증명사진, 신분증 사진 촬영은 불가합니다.
                     </li>
                     <li>
-                        <strong>🧹 소품 정리</strong><br />
-                        소품/배경지 사용 후 원래 자리에 정리해 주세요.
+                        <strong>장비 조작 금지</strong><br />
+                        카메라 구도, 줌, 조명 등 장비를 임의로 조작하지 말아 주세요.
                     </li>
                     <li>
-                        <strong>👟 실내화 착용</strong><br />
-                        깨끗한 스튜디오 유지를 위해 실내화를 신어주세요.
-                    </li>
-                    <li>
-                        <strong>🐕 반려동물</strong><br />
-                        배변 패드 필수 지참, 매너벨트 착용 권장<br />
-                        러그 오염 시 청소비(1만원) 발생
-                    </li>
-                    <li>
-                        <strong>📷 카메라 조작 금지</strong><br />
-                        카메라 구도/줌 등 조작을 하지 말아주세요. 다음 고객님께 피해가 갑니다.
+                        <strong>반려동물 동반</strong><br />
+                        보호자가 안전하게 케어해 주세요. 오염이나 파손이 생기면 바로 알려주세요.
                     </li>
                 </ul>
             </div>
 
-            {/* 위치 안내 섹션 */}
             <div className={styles.locationSection}>
-                <h2 className={styles.sectionTitle}>📍 위치 안내</h2>
+                <h2 className={styles.sectionTitle}>위치 안내</h2>
                 <ul className={styles.locationList}>
                     <li>
                         <strong>주소</strong><br />
-                        성남시 분당구 야탑동 장미로101 833동 앞 근린상가 2층
+                        경기 성남시 분당구 장미로 101, 현대아파트 833동 앞 근린상가 2층
                     </li>
                     <li>
-                        <strong>길찾기</strong><br />
-                        네이버/티맵에서 &apos;스튜디오생일&apos; 상호명으로 검색<br />
-                        <span className={styles.locationNote}>(도로명 주소로 검색하면 엉뚱한 곳으로 안내될 수 있음)</span>
+                        <strong>오시는 길</strong><br />
+                        야탑역 4번 출구 도보 약 7분<br />
+                        장미마을 정류장 하차 시 도보 약 2분
                     </li>
                     <li>
                         <strong>주차</strong><br />
-                        상가 앞 또는 단지 내 빈 곳<br />
-                        입구에 비치된 방문증 차량 전면에 필수 비치<br />
-                        <span className={styles.locationNote}>(미비치 시 주차단속)</span>
-                    </li>
-                    <li>
-                        <strong>차단기 문제 시</strong><br />
-                        031-602-2015
-                    </li>
-                    <li>
-                        <strong>비상연락처</strong><br />
-                        010-2132-5282
+                        상가 앞 또는 단지 내 빈 곳에 주차 가능합니다. 방문증을 차량 전면에 놓아주세요.
                     </li>
                 </ul>
             </div>
 
-            {/* 문의 섹션 */}
             <div className={styles.contactSection}>
                 <p className={styles.contactText}>궁금한 점이 있으신가요?</p>
                 <a
@@ -245,13 +137,12 @@ export default function GuidePage() {
                     rel="noreferrer"
                     className={styles.contactBtn}
                 >
-                    💬 네이버 톡톡으로 문의하기
+                    네이버톡톡 문의
                 </a>
             </div>
 
-            {/* 푸터 */}
             <footer className={styles.footer}>
-                <p>© 스튜디오생일 | 분당 야탑 셀프사진관</p>
+                <p>© 스튜디오생일 | 분당 야탑 프라이빗 셀프사진관</p>
             </footer>
         </div>
     );

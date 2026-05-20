@@ -3,27 +3,27 @@ import styles from './HowToUseSection.module.css';
 const steps = [
     {
         number: '01',
-        icon: '📱',
-        title: '예약하기',
-        description: '네이버 예약에서 원하는 날짜와 시간을 선택해 주세요.'
+        icon: '🚪',
+        title: '입장 및 준비',
+        description: '예약 시간에 맞춰 입장 후 안내문을 확인하고 촬영을 준비합니다.'
     },
     {
         number: '02',
-        icon: '🚶',
-        title: '방문하기',
-        description: '예약 시간 5분 전, 문자로 안내받은 비밀번호를 입력하고 입장해 주세요.'
+        icon: '📸',
+        title: '셀프촬영',
+        description: '리모컨으로 약 30분 동안 아이보리 배경 앞에서 직접 촬영합니다.'
     },
     {
         number: '03',
-        icon: '📸',
-        title: '촬영하기',
-        description: '프라이빗한 공간에서 우리만의 속도로 자유롭게 셔터를 눌러보세요.'
+        icon: '🖼️',
+        title: '사진 선택과 인화',
+        description: '약 25분 동안 마음에 드는 사진을 고르고 기본 5x7 인화 3장을 직접 출력합니다.'
     },
     {
         number: '04',
-        icon: '💌',
-        title: '사진 수령',
-        description: '베이직은 현장에서 바로 인화하고, 프리미엄은 보정 후 택배로 보내드려요.'
+        icon: '🎞️',
+        title: '원본 파일 수령',
+        description: '촬영 원본 전체를 무료로 받아갑니다.'
     }
 ];
 
@@ -32,8 +32,8 @@ export default function HowToUseSection() {
         <section className={`section ${styles.howToUse}`}>
             <div className="container">
                 <div className="section-title">
-                    <h2>이용 방법</h2>
-                    <p>간편한 4단계로 특별한 추억을 만들어 보세요</p>
+                    <h2>이용 흐름</h2>
+                    <p>총 55분 이용, 촬영 약 30분과 사진 선택 및 인화 약 25분으로 진행됩니다</p>
                 </div>
 
                 <div className={styles.steps}>

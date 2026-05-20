@@ -7,7 +7,6 @@ import ReviewsSection from '@/components/ReviewsSection';
 import HowToUseSection from '@/components/HowToUseSection';
 import PricingSection from '@/components/PricingSection';
 import LocationSection from '@/components/LocationSection';
-import AIServicesSection from '@/components/AIServicesSection';
 import ReservationSection from '@/components/ReservationSection';
 import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
@@ -25,8 +24,6 @@ export default function Home() {
         <HowToUseSection />
         <PricingSection />
         <LocationSection />
-        {/* AI Services Section - Coming Soon (런칭 전까지 숨김) */}
-        {/* <AIServicesSection /> */}
         <ReservationSection />
       </main>
       <FloatingCTA />

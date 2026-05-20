@@ -10,7 +10,7 @@ export default function Footer() {
                     <div className={styles.brand}>
                         <a href="#" className={styles.logo}>
                             <span className={styles.logoIcon}>📸</span>
-                            <span className={styles.logoText}>Studio B-day</span>
+                            <span className={styles.logoText}>Studio BDAY</span>
                         </a>
                         <p className={styles.tagline}>작가 없이, 우리끼리, 우리답게</p>
                     </div>
@@ -30,7 +30,7 @@ export default function Footer() {
 
                         <div className={styles.infoGroup}>
                             <h4>위치</h4>
-                            <p>성남시 분당구 야탑동 장미로101 근린상가2층 스튜디오생일</p>
+                            <p>경기 성남시 분당구 장미로 101, 현대아파트 833동 앞 근린상가 2층</p>
                         </div>
                     </div>
 
@@ -51,11 +51,11 @@ export default function Footer() {
                                 </svg>
                             </a>
                             <a
-                                href="http://pf.kakao.com/_dykYG/chat"
+                                href="https://talk.naver.com/profile/weckh5v"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.socialLink}
-                                aria-label="Kakao Channel"
+                                aria-label="Naver TalkTalk"
                             >
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 3C6.5 3 2 6.58 2 11c0 2.85 1.89 5.34 4.72 6.76-.15.53-.55 1.92-.63 2.22-.1.36.13.36.28.26.12-.08 1.85-1.24 2.6-1.74.66.1 1.35.15 2.03.15 5.5 0 10-3.58 10-8s-4.5-8-10-8z" />
@@ -67,7 +67,7 @@ export default function Footer() {
 
                 <div className={styles.bottom}>
                     <p className={styles.copyright}>
-                        © {currentYear} Studio B-day. All rights reserved.
+                        © {currentYear} Studio BDAY. All rights reserved.
                     </p>
                     <p className={styles.business}>
                         사업자등록번호: 497-65-00431 | 대표: 최승진

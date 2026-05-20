@@ -33,26 +33,6 @@ const reviews = [
         content: '무인사진관이라 낮갈이가 심한 아이, 경계심이 심한 아이도 편안하게 촬영 가능해요. 아이들이 충분히 놀고 휴식할 수 있는 공간이 있어서 촬영부담이 적었답니다!',
         highlight: '아이 맞춤 공간',
         source: '네이버 블로그'
-    },
-    {
-        id: 4,
-        name: '행*한*정',
-        type: '커플 촬영',
-        rating: 5,
-        date: '2024.09',
-        content: '소품들이 다양하고 깔끔하게 관리되어 있어요. AI 보정이 뭐 얼마나 괜찮겠어 싶었는데 결과물이 예상보다 예쁘게 되더라고요! 원본 파일도 무료로 제공해주세요!',
-        highlight: 'AI 보정 만족',
-        source: '네이버 블로그'
-    },
-    {
-        id: 5,
-        name: '웨*하*',
-        type: '하객룩',
-        rating: 5,
-        date: '2024.11',
-        content: '라온제나 분당 결혼식 전에 하객룩 촬영하러 왔어요! 도보로 가까워서 시간 여유있게 촬영하고 식장 갔어요. 하객룩 사진 너무 잘 나와서 대만족입니다 ㅎㅎ',
-        highlight: '결혼식장 근처',
-        source: '네이버 예약'
     }
 ];
 
@@ -73,7 +53,7 @@ export default function ReviewsSection() {
             <div className="container">
                 <div className="section-title">
                     <h2>고객 후기</h2>
-                    <p>실제 방문 고객님들의 생생한 후기예요</p>
+                    <p>현재 포지션과 맞는 실제 후기만 추려 보여드립니다</p>
                 </div>
 
                 <div className={styles.stats}>

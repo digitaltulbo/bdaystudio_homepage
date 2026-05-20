@@ -88,7 +88,7 @@ export default function GallerySection() {
             <div className="container">
                 <div className="section-title">
                     <h2>포트폴리오</h2>
-                    <p>Studio B-day에서 촬영된 특별한 순간들</p>
+                    <p>Studio BDAY에서 촬영된 특별한 순간들</p>
                 </div>
 
                 <div className={styles.tabs}>

@@ -5,9 +5,9 @@ import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://bdaystudio.store"),
-  title: "스튜디오생일 | 분당 야탑 셀프사진관 · 라온제나 도보 7분",
-  description: "작가 없이 우리끼리, 우리답게. 반려견 동반 가능, 라온제나 분당 도보 7분 거리의 프라이빗 셀프 스튜디오. 가족사진, 만삭촬영, 하객룩, 커플사진까지. AI보정으로 당일 전송!",
-  keywords: "분당셀프사진관, 야탑사진관, 성남셀프스튜디오, 반려견촬영, 가족사진, 하객룩, 만삭사진, 라온제나사진관, AI보정사진관, 스튜디오생일, 셀프사진관, 분당사진관",
+  title: "스튜디오생일 | 분당 야탑 프라이빗 셀프사진관",
+  description: "성남 분당 야탑의 가족 중심 프라이빗 셀프사진관. 가족사진, 만삭사진, 아기 성장기록, 반려동물 촬영을 우리끼리 편하게 남겨보세요.",
+  keywords: "분당셀프사진관, 야탑사진관, 성남셀프스튜디오, 가족사진, 만삭사진, 아기성장기록, 반려동물촬영, 스튜디오생일, Studio BDAY",
   authors: [{ name: "스튜디오생일" }],
   creator: "스튜디오생일",
   publisher: "스튜디오생일",
@@ -20,8 +20,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "스튜디오생일 | 분당 야탑 셀프사진관",
-    description: "작가 없이 우리끼리, 우리답게. 반려견 동반 가능한 프라이빗 셀프 스튜디오. 라온제나 분당 도보 7분!",
+    title: "스튜디오생일 | 분당 야탑 프라이빗 셀프사진관",
+    description: "성남 분당 야탑의 가족 중심 프라이빗 셀프사진관. 가족사진, 만삭사진, 아기 성장기록, 반려동물 촬영을 우리끼리 편하게 남겨보세요.",
     url: "https://bdaystudio.store",
     siteName: "스튜디오생일",
     locale: "ko_KR",
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "스튜디오생일 | 분당 야탑 셀프사진관",
-    description: "작가 없이 우리끼리, 우리답게. 반려견 동반 가능한 프라이빗 셀프 스튜디오.",
+    title: "스튜디오생일 | 분당 야탑 프라이빗 셀프사진관",
+    description: "성남 분당 야탑의 가족 중심 프라이빗 셀프사진관.",
   },
   robots: {
     index: true,
@@ -59,9 +59,9 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "PhotographyBusiness",
-              name: "스튜디오생일 (Studio B-day)",
+              name: "스튜디오생일 (Studio BDAY)",
               description:
-                "작가 없이 우리끼리, 우리답게. 반려견 동반 가능한 프라이빗 셀프 스튜디오. 가족사진, 만삭촬영, 하객룩, 커플사진까지.",
+                "성남 분당 야탑의 가족 중심 프라이빗 셀프사진관. 가족사진, 만삭사진, 아기 성장기록, 반려동물 촬영을 우리끼리 편하게 남겨보세요.",
               url: "https://bdaystudio.store",
               telephone: "0507-1433-5283",
               address: {

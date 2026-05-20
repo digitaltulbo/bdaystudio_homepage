@@ -3,27 +3,27 @@ import styles from './FeaturesSection.module.css';
 const features = [
     {
         icon: '🔒',
-        title: '프라이빗 촬영',
-        description: '작가 없이 우리끼리만, 눈치 보지 않고 자유롭게 촬영할 수 있어요.',
-        accent: '작가의 시선이 부담스러웠다면'
+        title: '프라이빗 셀프촬영',
+        description: '한 팀만 사용하는 공간에서 촬영, 사진 선택, 인화까지 직접 진행합니다.',
+        accent: '우리끼리 편하게'
+    },
+    {
+        icon: '👨‍👩‍👧‍👦',
+        title: '가족 중심 촬영',
+        description: '가족사진, 만삭사진, 아기 성장기록을 자연스럽게 남길 수 있어요.',
+        accent: '가족의 속도에 맞춰'
     },
     {
         icon: '🐕',
-        title: '반려견 동반 가능',
-        description: '소중한 가족인 반려견과 함께 특별한 추억을 남겨보세요.',
-        accent: '다른 스튜디오에서 거절당했다면'
+        title: '반려동물도 가족으로',
+        description: '영유아 또는 반려동물 1명은 무료로 함께 촬영할 수 있습니다.',
+        accent: '함께 남기는 기록'
     },
     {
-        icon: '💒',
-        title: '결혼식장 도보거리',
-        description: '하객룩 기념사진 명소! 결혼식 전후로 간편하게 방문하세요.',
-        accent: '라온제나 분당 도보 7분'
-    },
-    {
-        icon: '🤖',
-        title: 'AI 서비스',
-        description: '졸업사진 생성기, 포즈북 등 촬영 후 특별한 경험을 더해드려요.',
-        accent: '촬영 후에도 특별하게'
+        icon: '🤍',
+        title: '아이보리 배경 중심',
+        description: '현재는 깔끔하고 따뜻한 아이보리 배경을 중심으로 운영합니다.',
+        accent: '밝고 부드러운 무드'
     }
 ];
 
@@ -32,8 +32,8 @@ export default function FeaturesSection() {
         <section id="features" className={`section ${styles.features}`}>
             <div className="container">
                 <div className="section-title">
-                    <h2>왜 Studio B-day인가요?</h2>
-                    <p>다른 스튜디오에서 느꼈던 불편함, 저희는 알고 있어요</p>
+                    <h2>왜 Studio BDAY인가요?</h2>
+                    <p>가족이 편하게 머물 수 있는 프라이빗 셀프사진관입니다</p>
                 </div>
 
                 <div className={styles.grid}>

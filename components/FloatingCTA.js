@@ -21,20 +21,13 @@ export default function FloatingCTA() {
             {/* Expanded menu */}
             <div className={`${styles.expandedMenu} ${isExpanded ? styles.show : ''}`}>
                 <a
-                    href="tel:0507-1433-5283"
-                    className={styles.menuItem}
-                >
-                    <span className={styles.menuIcon}>📞</span>
-                    <span>전화문의</span>
-                </a>
-                <a
-                    href="http://pf.kakao.com/_dykYG/chat"
+                    href="https://talk.naver.com/profile/weckh5v"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.menuItem}
                 >
                     <span className={styles.menuIcon}>💬</span>
-                    <span>카카오 문의</span>
+                    <span>네이버톡톡 문의</span>
                 </a>
             </div>
 
